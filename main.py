@@ -39,7 +39,7 @@ def matToImageData(mat, palette):
             imgData[y][x] = [float(c/255.0) for c in col]
     return imgData
 
-img_path = "C:/Users/AstinA/Videos/thermos.jpg"
+img_path = "imeges/thermos.jpg"
 domColors = dominant_cluster.get_dom_colors(img_path,15,True)
 palette = domColors
 # palette = [[25, 43, 49], [100, 111, 111], [58, 68, 65], [154, 155, 149], [85, 97, 97], [39, 62, 69], [18, 34, 40], [71, 84, 85], [148, 141, 122], [53, 74, 79], [123, 117, 101], [30, 51, 58], [43, 55, 53], [183, 181, 174], [121, 130, 130]]
