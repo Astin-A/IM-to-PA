@@ -38,8 +38,7 @@ def centroid_histogram(clt):
     return hist
 
 
-def get_dom_colors(image_path, n_clusters=10, use_gpu=True, plot=True):
-    image = image_utils.load_image(image_path, resize=True)
+def get_dominant_colors(image, n_clusters=10, use_gpu=True, plot=True):
     image = image.reshape((image.shape[0] * image.shape[1], 3)).astype('float32')
 
     if use_gpu:
@@ -67,7 +66,7 @@ def get_dom_colors(image_path, n_clusters=10, use_gpu=True, plot=True):
     return (centroids*255).astype("uint8")
 
 
-def compute_cluster_assignment(centroids, x):
+def compute_cluster_assignment(centroids, data):
     dims = centroids.shape[1]
 
     resources = faiss.StandardGpuResources()
@@ -77,7 +76,7 @@ def compute_cluster_assignment(centroids, x):
 
     index = faiss.GpuIndexFlatL2(resources, dims, config)
     index.add(centroids)
-    _, labels = index.search(x, 1)
+    _, labels = index.search(data, 1)
 
     return labels.ravel()
 
