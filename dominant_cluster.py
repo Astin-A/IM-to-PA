@@ -84,14 +84,14 @@ def compute_cluster_assignment(centroids, x):
 
 # import time
 # t0 = time.time()
-# dom_colors, bar = get_dom_colors("images/dancing.jpg", n_clusters=10)
+# dom_colors, bar = get_dom_colors("imeges/thermos.jpg", n_clusters=10)
 # t1 = time.time()
 # print(dom_colors)
 # image_utils.save_plot(bar, "test1.png")
 # print("k-Means runtime: %.3f s" % (t1 - t0))
 
 # t0 = time.time()
-# dom_colors, bar = get_dom_colors("images/dancing.jpg", n_clusters=10, use_gpu=False)
+# dom_colors, bar = get_dom_colors("imeges/thermos.jpg", n_clusters=10, use_gpu=False)
 # t1 = time.time()
 # print(dom_colors)
 # image_utils.save_plot(bar, "test.png")
